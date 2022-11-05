@@ -42,6 +42,10 @@ const NAV_LINKS: ISubNav[] = [
       },
     ],
   },
+  {
+    label: 'Prueba',
+    href: '/prueba',
+  },
 ];
 
 export default NAV_LINKS;
