@@ -1,4 +1,4 @@
-import { Box, Grid, Heading } from '@chakra-ui/react';
+import { Box, Container, Grid, Heading } from '@chakra-ui/react';
 import { NFTCard } from 'components/modules';
 import { FC, useEffect } from 'react';
 import { INFTBalances } from './types';
@@ -7,7 +7,7 @@ const NFTBalances: FC<INFTBalances> = ({ balances }) => {
   useEffect(() => console.log('balances: ', balances), [balances]);
 
   return (
-    <>
+    <Container>
       <Heading size="lg" marginBottom={6}>
         NFT Balances
       </Heading>
@@ -20,7 +20,7 @@ const NFTBalances: FC<INFTBalances> = ({ balances }) => {
       ) : (
         <Box>Looks Like you do not have any NFTs</Box>
       )}
-    </>
+    </Container>
   );
 };
 

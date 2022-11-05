@@ -1,8 +1,24 @@
-import { Box, HStack, Image, SimpleGrid, useColorModeValue } from '@chakra-ui/react';
+import {
+  Box,
+  HStack,
+  Image,
+  SimpleGrid,
+  Text,
+  useColorModeValue,
+  Center,
+  Stack,
+  Flex,
+  Spacer,
+  Heading,
+  VStack,
+  Select,
+  Button,
+} from '@chakra-ui/react';
 import { Eth } from '@web3uikit/icons';
 import { FC } from 'react';
 import { resolveIPFS } from 'utils/resolveIPFS';
 import { INFTCard } from './types';
+import { MdOutlinePlace } from 'react-icons/md';
 
 const NFTCard: FC<INFTCard> = ({ amount, contractType, name, symbol, metadata }) => {
   const bgColor = useColorModeValue('none', 'gray.700');
@@ -21,34 +37,58 @@ const NFTCard: FC<INFTCard> = ({ amount, contractType, name, symbol, metadata })
           objectFit="fill"
         />
       </Box>
-      <Box mt="1" fontWeight="semibold" as="h4" noOfLines={1} marginTop={2}>
-        {name}
-      </Box>
-      <HStack alignItems={'center'}>
-        <Box as="h4" noOfLines={1} fontWeight="medium" fontSize="smaller">
-          {contractType}
-        </Box>
-
-        <Eth fontSize="20px" />
+      {/* Direction */}
+      <HStack mt={2} align="center">
+        <MdOutlinePlace color="#969696" />
+        <Text as="b" color={'#969696'}>
+          {name}
+        </Text>
       </HStack>
-      <SimpleGrid columns={2} spacing={4} bgColor={descBgColor} padding={2.5} borderRadius="xl" marginTop={2}>
-        <Box>
-          <Box as="h4" noOfLines={1} fontWeight="medium" fontSize="sm">
-            Symbol
-          </Box>
-          <Box as="h4" noOfLines={1} fontSize="sm">
-            {symbol}
-          </Box>
-        </Box>
-        <Box>
-          <Box as="h4" noOfLines={1} fontWeight="medium" fontSize="sm">
-            Amount
-          </Box>
-          <Box as="h4" noOfLines={1} fontSize="sm">
-            {amount}
-          </Box>
-        </Box>
+      {/* Price */}
+      <Center>$560,000</Center>
+      {/* Info about rooms and size */}
+      <Box w={'75%'} margin={'auto'}>
+        <Flex>
+          <Text color="#969696">3 beds</Text>
+          <Spacer />
+          <Text color="#969696">2 baths</Text>
+          <Spacer />
+          <Text color="#969696">2,012 sqft</Text>
+        </Flex>
+      </Box>
+      {/* Price */}
+      <SimpleGrid columns={2} spacing={4} padding={2.5} borderRadius="xl" marginTop={2}>
+        <Text color="#969696">Down payment</Text>
+        <Text color="#969696">$10,000 USDC</Text>
+        <Text color="#969696">Interest Rate</Text>
+        <Text color="#969696">%7.5</Text>
+        <Text color="#969696">Credit Score</Text>
+        <Text color="#969696">768</Text>
+        <Text color="#969696">Value</Text>
+        <Text color="#969696">$1.3M</Text>
       </SimpleGrid>
+      {/* Invest */}
+      <VStack>
+        <Center>
+          <Heading color="#969696" size="md">
+            PRECENTAGE TO INVEST
+          </Heading>
+        </Center>
+        <Select width={'50%'} bgColor={'#E6E6E6'} color={'#FFA500'} style={{ fontWeight: 'bold' }}>
+          <option style={{ textAlign: 'center', fontWeight: 'bold' }} value="option1">
+            5%
+          </option>
+          <option style={{ textAlign: 'center', fontWeight: 'bold' }} value="option2">
+            10%
+          </option>
+          <option style={{ textAlign: 'center', fontWeight: 'bold' }} value="option3">
+            15%
+          </option>
+        </Select>
+        <Button bgColor={'#FFA500'} color={'#FEFEFE'} borderRadius={'1rem'} width="75%">
+          Invest Now
+        </Button>
+      </VStack>
     </Box>
   );
 };
