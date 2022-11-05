@@ -1,63 +1,23 @@
 import { CheckCircleIcon, SettingsIcon } from '@chakra-ui/icons';
-import { Heading, VStack, List, ListIcon, ListItem } from '@chakra-ui/react';
+import { VStack, Heading, Input, Text, Box, Container } from '@chakra-ui/react';
+import House from './Scandinavian-Home-Exterior20.png';
 
 const Home = () => {
   return (
-    <VStack w={'full'}>
-      <Heading size="md" marginBottom={6}>
-        Ethereum Boilerplate
-      </Heading>
-      <List spacing={3}>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          Moralis authentication
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          Display Transactions
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          Display ERC20 transfers
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          Display ERC20 balances
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          Display NFT balances
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          Display NFT transfers
-        </ListItem>
-        <ListItem>
-          <ListIcon as={SettingsIcon} color="green.500" />
-          Multichain Support
-        </ListItem>
-        <ListItem>
-          <ListIcon as={SettingsIcon} color="green.500" />
-          Adding explorer links to balances, transactions ...
-        </ListItem>
-        <ListItem>
-          <ListIcon as={SettingsIcon} color="green.500" />
-          Better responsive design
-        </ListItem>
-        <ListItem>
-          <ListIcon as={SettingsIcon} color="green.500" />
-          Rainbowkit integration
-        </ListItem>
-        <ListItem>
-          <ListIcon as={SettingsIcon} color="green.500" />
-          Using Moralis from client-side
-        </ListItem>
-        <ListItem>
-          <ListIcon as={SettingsIcon} color="green.500" />
-          ... and more
-        </ListItem>
-      </List>
-    </VStack>
+    <Container
+      minWidth={'100%'}
+      backgroundImage="url('./Scandinavian-Home-Exterior20.png')"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
+    >
+      <VStack w={'full'}>
+        <Heading as="h2" size="2xl" marginBottom={6}>
+          Discover new opportunities
+        </Heading>
+        <Input placeholder="Basic usage" />
+        <Text fontSize="3xl">We help people invest in property</Text>
+      </VStack>
+    </Container>
   );
 };
 
