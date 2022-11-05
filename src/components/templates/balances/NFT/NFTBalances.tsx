@@ -7,7 +7,7 @@ const NFTBalances: FC<INFTBalances> = ({ balances }) => {
   useEffect(() => console.log('balances: ', balances), [balances]);
 
   return (
-    <Container>
+    <div style={{ marginLeft: 'auto', marginRight: 'auto', width: '75%' }}>
       <Heading size="lg" marginBottom={6}>
         NFT Balances
       </Heading>
@@ -20,7 +20,7 @@ const NFTBalances: FC<INFTBalances> = ({ balances }) => {
       ) : (
         <Box>Looks Like you do not have any NFTs</Box>
       )}
-    </Container>
+    </div>
   );
 };
 

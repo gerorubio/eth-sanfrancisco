@@ -20,21 +20,14 @@ import { resolveIPFS } from 'utils/resolveIPFS';
 import { INFTCard } from './types';
 import { MdOutlinePlace } from 'react-icons/md';
 
-const NFTCard: FC<INFTCard> = ({ amount, contractType, name, symbol, metadata }) => {
+const NFTCardCarousel: FC<INFTCard> = ({ amount, contractType, name, symbol, metadata, image }) => {
   const bgColor = useColorModeValue('none', 'gray.700');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
 
   return (
     <Box maxWidth="315px" bgColor={bgColor} padding={3} borderRadius="xl" borderWidth="1px" borderColor={borderColor}>
       <Box maxHeight="260px" overflow={'hidden'} borderRadius="xl">
-        <Image
-          src={resolveIPFS(metadata?.image as string)}
-          alt={'nft'}
-          minH="260px"
-          minW="260px"
-          boxSize="100%"
-          objectFit="fill"
-        />
+        <Image src={image} alt={'nft'} minH="260px" minW="260px" boxSize="100%" objectFit="fill" />
       </Box>
       {/* Direction */}
       <HStack mt={2} align="center">
@@ -92,4 +85,4 @@ const NFTCard: FC<INFTCard> = ({ amount, contractType, name, symbol, metadata })
   );
 };
 
-export default NFTCard;
+export default NFTCardCarousel;
